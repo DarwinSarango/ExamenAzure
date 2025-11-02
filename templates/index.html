@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Personales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Mis Notas Personales</h1>
+            <p class="subtitle">Organiza tus ideas y pensamientos</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Formulario para crear/editar notas -->
+            <div class="note-form-container">
+                <h2 id="form-title">Crear Nueva Nota</h2>
+                <form id="noteForm">
+                    <input type="hidden" id="noteId">
+                    <div class="form-group">
+                        <label for="noteTitle">Título:</label>
+                        <input type="text" id="noteTitle" placeholder="Ingresa un título..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="noteContent">Contenido:</label>
+                        <textarea id="noteContent" rows="6" placeholder="Escribe tu nota aquí..." required></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary" id="saveBtn">Guardar Nota</button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Lista de notas -->
+            <div class="notes-container">
+                <h2>Mis Notas</h2>
+                <div id="notesList" class="notes-list">
+                    <p class="no-notes">No hay notas todavía. ¡Crea tu primera nota!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
